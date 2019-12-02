@@ -18,7 +18,7 @@ struct QuoteView: View {
                 Group() {
                     Divider()
                     Text(quote.russian).font(.body)
-                }
+                }.transition(.move(edge: .top)).animation(.default)
             }
         }
     }
@@ -26,6 +26,6 @@ struct QuoteView: View {
 
 struct QuoteView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteView(quote: UserData().latinities[0].quotes[0])
+        QuoteView(quote: UserData().latinities[0].quotes[1])
     }
 }

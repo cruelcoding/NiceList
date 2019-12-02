@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var userData : UserData
+    @ObservedObject var userData = UserData()
     
     func sectionIndex(section : SectionDataModel) -> Int {
         userData.latinities.firstIndex(where: {$0.letter == section.letter})!
@@ -45,6 +45,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(UserData())
+        ContentView()
     }
 }
